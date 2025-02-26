@@ -108,7 +108,7 @@ function M.go_test(go_test_required_args)
     args = args()
   end
   table.insert(args, "-gcflags=all=-N -l")
-  logger.warn("go test args: " .. vim.inspect(args))
+  -- logger.warn("go test args: " .. vim.inspect(args))
   cmd = vim.list_extend(vim.deepcopy(cmd), args)
   cmd = vim.list_extend(vim.deepcopy(cmd), go_test_required_args)
   return cmd

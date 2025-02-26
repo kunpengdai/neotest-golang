@@ -8,7 +8,7 @@ local M = {}
 
 local opts = {
   runner = "go", -- or "gotestsum"
-  go_test_args = { "-v", "-race", "-count=1", "-timeout=45s" }, -- NOTE: can also be a function
+  go_test_args = { "-v", "-race", "-count=1" }, -- NOTE: can also be a function
   gotestsum_args = { "--format=standard-verbose" }, -- NOTE: can also be a function
   go_list_args = {}, -- NOTE: can also be a function
   dap_go_opts = {}, -- NOTE: can also be a function
@@ -35,8 +35,6 @@ function M.setup(user_opts)
   else
   end
   logger.debug("Loaded with options: " .. vim.inspect(opts))
-  logger.warn("Loaded with user options: " .. vim.inspect(user_opts))
-  logger.warn("Loaded with options: " .. vim.inspect(opts))
 end
 
 function M.get()
