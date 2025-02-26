@@ -107,6 +107,7 @@ function M.go_test(go_test_required_args)
   if type(args) == "function" then
     args = args()
   end
+  table.insert(args, "-gcflags=all=-N -l")
   logger.warn("go test args: " .. vim.inspect(args))
   cmd = vim.list_extend(vim.deepcopy(cmd), args)
   cmd = vim.list_extend(vim.deepcopy(cmd), go_test_required_args)
