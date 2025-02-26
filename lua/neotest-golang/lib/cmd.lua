@@ -107,6 +107,7 @@ function M.go_test(go_test_required_args)
   if type(args) == "function" then
     args = args()
   end
+  logger.warn("go test args: " .. vim.inspect(args))
   cmd = vim.list_extend(vim.deepcopy(cmd), args)
   cmd = vim.list_extend(vim.deepcopy(cmd), go_test_required_args)
   return cmd
